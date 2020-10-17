@@ -1,0 +1,116 @@
+
+dotnet new :
+
+dotnet new -h|--help
+dotnet help new
+dotnet new mvc -au None
+dotnet new webapi -au None
+dotnet new classlib -lang VB -o MyLibrary
+
+dotnet build
+dotnet build --configuration Release
+dotnet build --source c:\packages\mypackages
+dotnet build -p:Version=1.2.3.4
+
+
+dotnet build-server shutdown [--msbuild] [--razor] [--vbcscompiler]
+dotnet build-server shutdown -h|--help
+dotnet build-server -h|--help
+
+
+dotnet clean
+dotnet clean --configuration Release
+
+
+dotnet migrate
+dotnet migrate path/to/global.json
+dotnet migrate -s -v 1.0.0-preview4
+
+
+dotnet msbuild
+dotnet msbuild -property:Configuration=Release
+dotnet msbuild -target:Publish -property:RuntimeIdentifiers=osx.10.11-x64
+dotnet msbuild -preprocess
+dotnet msbuild -preprocess:<fileName>.xml
+
+
+dotnet restore :
+
+dotnet restore
+dotnet restore ./projects/app1/app1.csproj
+dotnet restore -s c:\packages\mypackages
+dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages
+dotnet restore --verbosity detailed
+
+
+
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+
+// Entity Framework
+
+dotnet tool install --global dotnet-ef
+dotnet tool update --global dotnet-ef
+
+dotnet ef database drop -p Infrastructure -s API
+dotnet ef migrations remove -p Infrastructure -s API
+dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Data/Migrations
+dotnet ef database update InitialCreate
+dotnet ef database update 20180904195021_InitialCreate --connection your_connection_string
+dotnet ef database drop
+dotnet ef database update
+dotnet ef dbcontext info
+dotnet ef dbcontext list
+dotnet ef dbcontext scaffold
+dotnet ef migrations add
+dotnet ef migrations list
+dotnet ef migrations remove
+dotnet ef migrations script
+
+
+dotnet publish
+dotnet publish --runtime osx.10.11-x64
+dotnet publish --runtime osx.10.11-x64 --self-contained false
+dotnet publish --framework netcoreapp3.1 --runtime osx.10.11-x64
+dotnet publish ~/projects/app1/app1.csproj
+dotnet publish --no-dependencies
+
+
+
+dotnet run
+dotnet run --project ./projects/proj1/proj1.csproj
+dotnet run --configuration Release -- --help
+dotnet run --verbosity m
+
+
+dotnet new sln
+dotnet sln todo.sln list
+dotnet sln add todo-app/todo-app.csproj
+dotnet sln remove todo-app/todo-app.csproj
+dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj --in-root
+dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj
+dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj
+dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj
+dotnet store --manifest packages.csproj --framework-version 2.0.0
+dotnet store --manifest packages.csproj --skip-optimization
+
+dotnet test
+dotnet test ~/projects/test1/test1.csproj
+dotnet test --logger trx
+dotnet test --blame
+
+
+dotnet add app/app.csproj reference lib/lib.csproj
+dotnet add reference lib1/lib1.csproj lib2/lib2.csproj
+dotnet list app/app.csproj reference
+dotnet list reference
+dotnet remove app/app.csproj reference lib/lib.csproj
+dotnet remove reference lib1/lib1.csproj lib2/lib2.csproj
+
+
+dotnet add package Newtonsoft.Json
+dotnet add ToDo.csproj package Microsoft.Azure.DocumentDB.Core -v 1.0.0
+dotnet list SentimentAnalysis.csproj package
+dotnet list package --outdated --include-prerelease
+dotnet list package --framework netcoreapp3.0
+dotnet remove package Newtonsoft.Json
