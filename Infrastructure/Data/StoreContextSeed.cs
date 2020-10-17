@@ -15,7 +15,7 @@ namespace Infrastructure.Data
             {
                 if(!context.ProductBrands.Any())
                 {
-                    var brandsData = File.ReadAllText(@"~/Infrastructure/Data/SeedData/brands.json");
+                    var brandsData = File.ReadAllText(@"../Infrastructure/Data/SeedData/brands.json");
 
                     var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
 
