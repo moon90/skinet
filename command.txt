@@ -57,6 +57,7 @@ dotnet ef migrations remove -p Infrastructure -s API
 dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Data/Migrations
 dotnet ef database update InitialCreate
 dotnet ef database update 20180904195021_InitialCreate --connection your_connection_string
+dotnet ef database update InitialCreate -p Infrastructure -s API
 dotnet ef database drop
 dotnet ef database update
 dotnet ef dbcontext info
