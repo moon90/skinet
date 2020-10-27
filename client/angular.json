@@ -28,9 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss"
+              // "node_modules/bootstrap/scss/bootstrap.scss"
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           },
           "configurations": {
             "production": {
@@ -69,7 +73,7 @@
             "browserTarget": "client:build",
             "sslKey": "ssl/server.key",
             "sslCert": "ssl/server.crt",
-            "ssl": true
+            "ssl":true
           },
           "configurations": {
             "production": {
@@ -95,8 +99,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -128,10 +130,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "client",
-  "cli": {
-    "analytics": "f2d47a4d-d7e0-45fd-8d2b-307dc3b89272"
-  }
+    }},
+  "defaultProject": "client"
 }
