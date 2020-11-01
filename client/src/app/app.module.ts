@@ -1,3 +1,5 @@
+import { SharedModule } from './shared/shared.module';
+import { ShopModule } from './shop/shop.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    ShopModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
